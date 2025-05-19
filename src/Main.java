@@ -51,7 +51,7 @@ public class Main {
          * 1. undo/redo features in text editors
          * 2. moving back/forward through the browser history
          * 3. backtracking algorithms (maz, file directories)
-         * 4. calling functions
+         * 4. Calling functions
          */
     }
 }
