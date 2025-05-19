@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -5,10 +7,24 @@ import java.util.Stack;
 public class Main {
     public static void main(String[] args) {
 
+        //stack_lesson();
+        //queues_lesson();
+
+    }
+
+    static void stack_lesson(){
         // stack = LIFO: Last In; First Out
         //      Stores objects into a 'Vertical Tower'
         //      push() to add to the top
         //      pop() to remove from the top
+
+        // uses of stacks
+        /*
+         * 1. undo/redo features in text editors
+         * 2. moving back/forward through the browser history
+         * 3. backtracking algorithms (maz, file directories)
+         * 4. Calling functions
+         */
 
         Stack<String> stack = new Stack<String>();
 
@@ -19,6 +35,8 @@ public class Main {
         stack.push("Doom");
         stack.push("Borderlands");
         stack.push("FFVII");
+
+        System.out.println(stack);
 
         /* // Pop an item from the stack, assign it to a string variable, view stack to see item missing
         System.out.println(stack);
@@ -45,13 +63,67 @@ public class Main {
             stack.push("Fallout76");
         }
          */
-
-        // uses of stacks
-        /*
-         * 1. undo/redo features in text editors
-         * 2. moving back/forward through the browser history
-         * 3. backtracking algorithms (maz, file directories)
-         * 4. Calling functions
-         */
     }
+
+    static void queues_lesson(){
+        // Queue = FIFO: First In; First Out. ex: Line of People
+        //      A collection designed for holding elements prior to processing
+        //      Linear Data Structure
+        //
+        //      add     = enqueue, offer()
+        //      remove  = dequeue, poll()
+
+        // Uses of queues
+        /*
+         * 1. Keyboard buffer (letters should appear on the screen in the order they are pressed)
+         * 2. Printer Queue (Print jobs should be completed in order)
+         * 3. Used in LinkedLists, PriorityQueues and Breadth-first-Search
+         */
+
+        // Cannot instantiate a Queue, as it is an interface
+        // Queue<String> queue = new Queue<String>();
+        Queue<String> queue = new LinkedList<String>();
+
+        System.out.println(queue.isEmpty());
+
+        // Available Methods: add(), remove(), element()
+        // Best to actually use: offer(), poll(), peek()
+        queue.offer("Karen");
+        queue.offer("Chad");
+        queue.offer("Steve");
+        queue.offer("Harold");
+
+        // No longer empty queue
+        System.out.println(queue.isEmpty());
+
+        // Check size of queue
+        System.out.println(queue.size());
+
+        // Check if queue contains a thing. Does not return index, only true/false
+        System.out.println(queue.contains("Harold"));
+
+        /*
+        System.out.println(queue.peek());
+        queue.poll();
+
+        System.out.println(queue);
+
+        queue.poll();
+        queue.poll();
+        queue.poll();
+        queue.poll();
+
+        System.out.println(queue);
+
+        // element() and peek() do the same thing, however poll() and peek() won't throw and exception when we're out of elements
+
+        queue.poll();
+        queue.peek();
+        queue.element();
+
+        */
+
+
+    }
+
 }
