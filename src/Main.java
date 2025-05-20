@@ -169,6 +169,91 @@ public class Main {
 
     static void linkedLists_lesson(){
 
+        /*
+         * The reason we would use a linked list over an array
+         * is because Arrays are great at searching, but
+         * Inserting or Deleting an element takes a ton of time,
+         * since you have to shift items around and keep the
+         * memory contiguous.
+         *
+         * Though contiguous memory makes arrays great for
+         * searching, if we need to do a lot of deletion or
+         * insertion, a LinkedList is going to be faster since
+         * it only takes a few steps to accomplish either
+         */
+
+        /*
+         * LinkedList = stores Nodes in 2 parts (data + address)
+         * Nodes are in non-consevutive memory locations
+         * Elements are linked using pointers
+         *
+         * |||||||Singly Linked List
+         * Node             ->  Node            ->  Node
+         * [data | address]     [data | address]    [data | address]
+         * |||||||Doubly Linked List
+         * Node                     ->    Node                      ->     Node
+         * [address | data | address]     [address | data | address]       [address | data | address]
+         *
+         * advantages:
+         *  1. Dynamic Data Stucture (allocates needed memeory while running)
+         *  2. Insertion and Deletion of Nodes is easy. O(1)
+         *  3. No/Low memory waste
+         *
+         * disadvantages:
+         *  1. Greater memory usage (additional pointer)
+         *  2. No random access of elements (no index[i])
+         *  3. Accessing/searching elements is more time consuming. O(n)
+         *
+         * uses:
+         *  1. implement Stacks/Queues
+         *  2. GPS navigation
+         *  3. music playlist
+         */
+
+        // Hover over LinkedList to see that it's a doubly-linked list
+        LinkedList<String> linkedList = new LinkedList<String>();
+
+        // Because of 'Deque' being used in the implementation
+        // we have a lot of methods to chose from:
+        /*
+         * addFirst(), offerFirst(), addLast(), offerLast()
+         * removeFirst(), pollFirst(), removeLast(), pollLast()
+         * getFirst(), peekFirst, getLast(), peekLast()
+         */
+
+        // LinkedList as a Stack
+        /*
+        linkedList.push("A");
+        linkedList.push("B");
+        linkedList.push("C");
+        linkedList.push("D");
+        linkedList.push("F");
+        linkedList.pop();
+         */
+
+        // LinkedList as a Queue
+        linkedList.offer("A");
+        linkedList.offer("B");
+        linkedList.offer("C");
+        linkedList.offer("D");
+        linkedList.offer("F");
+        // linkedList.poll();
+
+        // insertion and deletion
+        linkedList.add(4, "E");
+        linkedList.remove("E");
+
+        System.out.println(linkedList.peekFirst());
+        System.out.println(linkedList.peekLast());
+        linkedList.addFirst("0");
+        linkedList.addLast("G");
+        String first = linkedList.removeFirst();
+        String last = linkedList.removeLast();
+
+        System.out.println(linkedList.indexOf("F"));
+
+        System.out.println(linkedList);
+
     }
 
 }
