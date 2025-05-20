@@ -1,6 +1,4 @@
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -9,7 +7,8 @@ public class Main {
 
         //stack_lesson();
         //queues_lesson();
-
+        //priorityQueues_lesson();
+        linkedLists_lesson();
     }
 
     static void stack_lesson(){
@@ -123,6 +122,52 @@ public class Main {
 
         */
 
+
+    }
+
+    static void priorityQueues_lesson(){
+
+        // Priority Queue = A FIFO data structure that serves elements
+        //                  with the highest priorities first
+        //                  before elements with lower priority
+
+        /*
+        // Ascending Order:
+        // Queue<Double> queue = new PriorityQueue<>();
+        // Descending Order:
+        Queue<Double> queue = new PriorityQueue<>(Collections.reverseOrder());
+
+        queue.offer(3.0);
+        queue.offer(2.5);
+        queue.offer(4.0);
+        queue.offer(1.5);
+        queue.offer(2.0);
+
+        // These are automatically sorted when polling because they are numbers in a Priority Queue
+        while(!queue.isEmpty()) {
+            System.out.println(queue.poll());
+        }
+
+         */
+
+        // Strings in alphabetical order
+        // Queue<String> queue = new PriorityQueue<>();
+        // Strings in reverse alphabetical order
+        Queue<String> queue = new PriorityQueue<>(Collections.reverseOrder());
+
+        queue.offer("B");
+        queue.offer("C");
+        queue.offer("A");
+        queue.offer("F");
+        queue.offer("D");
+
+        while(!queue.isEmpty()) {
+            System.out.println(queue.poll());
+        }
+
+    }
+
+    static void linkedLists_lesson(){
 
     }
 
