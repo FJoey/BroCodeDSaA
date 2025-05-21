@@ -8,7 +8,8 @@ public class Main {
         //stack_lesson();
         //queues_lesson();
         //priorityQueues_lesson();
-        linkedLists_lesson();
+        //linkedLists_lesson();
+        dynamicLists_lesson();
     }
 
     static void stack_lesson(){
@@ -255,5 +256,92 @@ public class Main {
         System.out.println(linkedList);
 
     }
+
+    static void dynamicLists_lesson(){
+        // Like an array except you can change the size
+        // It does this by just instantiating a new array
+        // of the needed size and copying the contents
+        // of the original array, to the new one.
+        //
+        // The new array is expanded or retracted by
+        // a fixed amount, maybe a multiple of the size
+        // of the original array.
+        /*
+         * Java = ArrayList
+         * C++ = Vector
+         * Javascript = Array
+         * Python = List
+         */
+
+        /*
+         * Advantages:
+         * 1. Random access of elements is O(1)
+         * 2. Good locality of reference and data cache utilization
+         * 3. Easy to insert/delete at the end
+         */
+        /*
+         * Disadvantages:
+         * 1. Wastes more memory than even a Linked List
+         * 2. Shifting elements is time consuming at O(n)
+         * 3. Expanding/Shrinking the array is time consuming O(n)
+         */
+
+        // Remember, an ArrayList is a Dynamic List
+        //ArrayList<String> arrayList = new ArrayList<String>();
+
+        // We will create a DynamicArray anyway
+        // DynamicArray dynamicArray = new DynamicArray();
+        DynamicArray dynamicArray = new DynamicArray(5);
+
+        // System.out.println(dynamicArray.capacity);
+
+        System.out.println(dynamicArray);
+        System.out.println("capacity: " + dynamicArray.capacity);
+        System.out.println("empty: " + dynamicArray.isEmpty());
+
+        dynamicArray.add("A");
+        dynamicArray.add("B");
+        dynamicArray.add("C");
+
+        dynamicArray.insert(0,"X");
+
+        System.out.println(dynamicArray);
+        System.out.println("size: " + dynamicArray.size);
+        System.out.println("capacity: " + dynamicArray.capacity);
+        System.out.println("empty: " + dynamicArray.isEmpty());
+
+        dynamicArray.delete("A");
+
+        System.out.println(dynamicArray);
+        System.out.println("size: " + dynamicArray.size);
+        System.out.println("capacity: " + dynamicArray.capacity);
+        System.out.println("empty: " + dynamicArray.isEmpty());
+
+        System.out.println("index of C: " + dynamicArray.search("C"));
+
+        // Testing grow()
+        dynamicArray.add("D");
+        dynamicArray.add("E");
+        System.out.println("size: " + dynamicArray.size);
+        System.out.println("capacity: " + dynamicArray.capacity);
+        System.out.println(dynamicArray);
+
+        dynamicArray.add("F");
+        System.out.println("size: " + dynamicArray.size);
+        System.out.println("capacity: " + dynamicArray.capacity);
+        System.out.println(dynamicArray);
+
+        // Testing shrink()
+        dynamicArray.delete("A");
+        dynamicArray.delete("B");
+        dynamicArray.delete("C");
+        dynamicArray.delete("D");
+        System.out.println("size: " + dynamicArray.size);
+        System.out.println("capacity: " + dynamicArray.capacity);
+        System.out.println(dynamicArray);
+
+    }
+
+
 
 }
