@@ -9,7 +9,8 @@ public class Main {
         //queues_lesson();
         //priorityQueues_lesson();
         //linkedLists_lesson();
-        dynamicLists_lesson();
+        //dynamicLists_lesson();
+        LinkedListvsArrayList_lesson();
     }
 
     static void stack_lesson(){
@@ -342,6 +343,70 @@ public class Main {
 
     }
 
+    static void LinkedListvsArrayList_lesson(){
+
+        LinkedList<Integer> linkedList = new LinkedList<Integer>();
+        ArrayList<Integer> arrayList = new ArrayList<Integer>();
+
+        long startTime;
+        long endTime;
+        long elapsedTime;
+
+        for(int i = 0; i < 1000000; i++){
+            linkedList.add(i);
+            arrayList.add(i);
+        }
+        // _____________________________________ Linked List
+        startTime = System.nanoTime();
+
+        //SEARCHING: Note Linked List is slower here
+        //linkedList.get(0);
+        //linkedList.get(500000);
+        //linkedList.get(999999);
+
+        //UPDATING: Note Linked List is faster here
+        //linkedList.remove(0);
+        //linkedList.remove(500000);
+        linkedList.remove(999999);
+
+        endTime = System.nanoTime();
+
+        elapsedTime = endTime - startTime;
+
+        System.out.println("LinkedList:\t" + elapsedTime + " ns");
+
+        // _____________________________________ ArrayList List
+        startTime = System.nanoTime();
+
+        //SEARCHING Note Arrays are faster here
+        //arrayList.get(0);
+        //arrayList.get(500000);
+        //arrayList.get(999999);
+
+        //UPDATING: Note Arrays are slower here
+        //arrayList.remove(0);
+        //arrayList.remove(500000);
+        arrayList.remove(999999);
+
+        endTime = System.nanoTime();
+
+        elapsedTime = endTime - startTime;
+
+        System.out.println("ArrayList:\t" + elapsedTime + " ns");
+
+    }
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
