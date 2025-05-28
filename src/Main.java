@@ -5,16 +5,21 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
 
+        /*STRUCTURES*/
         //stack_lesson();
         //queues_lesson();
         //priorityQueues_lesson();
         //linkedLists_lesson();
         //dynamicLists_lesson();
         //LinkedListvsArrayList_lesson();
+
+        /*SEARCH*/
         //linearSearch_lesson();
         //binarySearch_lesson();
         //interpolationSearch_lesson();
 
+        /*SORT*/
+        bubbleSort_lession();
     }
 
     static void stack_lesson(){
@@ -527,6 +532,39 @@ public class Main {
 
         return -1;
     }
+
+    static void bubbleSort_lession(){
+        //bubble sort = pairs of adjacent elements are compared,
+        //                  and the elements swapped if they are not in order
+        //
+        //              Quadratic time O(n^2)
+        //              small data set = okay-ish
+        //              large data set = BAD
+
+        int array[] = {9, 1, 8, 2, 7, 3, 6, 4, 5};
+
+        bubbleSort(array);
+
+        for (int i : array){
+            System.out.print(i);
+        }
+    }
+
+    private static void bubbleSort(int array[]) {
+        for(int i = 0; i < array.length - 1; i++){
+            for(int j = 0; j < array.length - 1; j++){
+                // To sort in descending order, switch 'Greater than' in condition below
+                //  to a 'less than'
+                if(array[j] > array[j + 1]){
+                    int temp = array[j];
+                    array[j] = array[j+1];
+                    array[j+1] = temp;
+                }
+            }
+        }
+    }
+
+
 }
 
 
