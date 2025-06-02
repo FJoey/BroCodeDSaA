@@ -22,6 +22,7 @@ public class Main {
         //bubbleSort_lession();
         //selectionSort_lesson();
         insertionSort_lesson();
+
     }
 
     static void stack_lesson(){
