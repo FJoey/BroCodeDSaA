@@ -712,13 +712,15 @@ public class Main {
     }
 
     static void mergeSort_lesson(){
+        // merge sort = recursively divide array in 2, sort, re-combine
+        // run-time complexity = O(n log n)
+        // space complexity    = O(n)
         int[] array = {8, 2, 5, 3, 4, 7, 6, 1};
 
         mergeSort(array);
 
         for(int i = 0; i < array.length; i++){
             System.out.print(array[i] + " ");
-
         }
     }
 
