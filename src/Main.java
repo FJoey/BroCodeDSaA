@@ -12,6 +12,7 @@ public class Main {
         //linkedLists_lesson();
         //dynamicLists_lesson();
         //LinkedListvsArrayList_lesson();
+        hashTables_lesson();
 
         /*SEARCH*/
         //linearSearch_lesson();
@@ -23,7 +24,7 @@ public class Main {
         //selectionSort_lesson();
         //insertionSort_lesson();
         //mergeSort_lesson();
-        quickSort_lesson();
+        //quickSort_lesson();
 
         /* OTHER */
         //recursion_lesson();
@@ -836,6 +837,40 @@ public class Main {
         array[end] = temp;
 
         return i;
+    }
+
+    static void hashTables_lesson(){
+        /*
+        Hashtable<Integer, String> table = new Hashtable<>(10, 0.5f);
+
+
+        table.put(100, "Spongebob");
+        table.put(123, "Patrick");
+        table.put(321, "Sandy");
+        table.put(555, "Squidward");
+        table.put(777, "Gary");
+
+        //table.remove(777);
+
+        for(Integer key : table.keySet()){
+            System.out.println(key.hashCode() % 10 + "\t" + key + "\t" + table.get(key));
+        }
+        */
+
+        //Capacity of Hashtable was 10, we increased to 21 to avoid collisions
+        Hashtable<String, String> table = new Hashtable<>(21, 0.5f);
+
+
+        table.put("100", "Spongebob");
+        table.put("123", "Patrick");
+        table.put("321", "Sandy");
+        table.put("555", "Squidward");
+        table.put("777", "Gary");
+
+
+        for(String key : table.keySet()){
+            System.out.println(key.hashCode() % 10 + "\t" + key + "\t" + table.get(key));
+        }
     }
 
 }
