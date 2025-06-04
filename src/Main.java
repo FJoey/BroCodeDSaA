@@ -22,13 +22,14 @@ public class Main {
         //bubbleSort_lession();
         //selectionSort_lesson();
         //insertionSort_lesson();
-        mergeSort_lesson();
+        //mergeSort_lesson();
+        quickSort_lesson();
 
         /* OTHER */
         //recursion_lesson();
     }
 
-    static void stack_lesson(){
+    static void stack_lesson() {
         // stack = LIFO: Last In; First Out
         //      Stores objects into a 'Vertical Tower'
         //      push() to add to the top
@@ -81,7 +82,7 @@ public class Main {
          */
     }
 
-    static void queues_lesson(){
+    static void queues_lesson() {
         // Queue = FIFO: First In; First Out. ex: Line of People
         //      A collection designed for holding elements prior to processing
         //      Linear Data Structure
@@ -142,7 +143,7 @@ public class Main {
 
     }
 
-    static void priorityQueues_lesson(){
+    static void priorityQueues_lesson() {
 
         // Priority Queue = A FIFO data structure that serves elements
         //                  with the highest priorities first
@@ -178,13 +179,13 @@ public class Main {
         queue.offer("F");
         queue.offer("D");
 
-        while(!queue.isEmpty()) {
+        while (!queue.isEmpty()) {
             System.out.println(queue.poll());
         }
 
     }
 
-    static void linkedLists_lesson(){
+    static void linkedLists_lesson() {
 
         /*
          * The reason we would use a linked list over an array
@@ -273,7 +274,7 @@ public class Main {
 
     }
 
-    static void dynamicLists_lesson(){
+    static void dynamicLists_lesson() {
         // Like an array except you can change the size
         // It does this by just instantiating a new array
         // of the needed size and copying the contents
@@ -319,7 +320,7 @@ public class Main {
         dynamicArray.add("B");
         dynamicArray.add("C");
 
-        dynamicArray.insert(0,"X");
+        dynamicArray.insert(0, "X");
 
         System.out.println(dynamicArray);
         System.out.println("size: " + dynamicArray.size);
@@ -358,7 +359,7 @@ public class Main {
 
     }
 
-    static void LinkedListvsArrayList_lesson(){
+    static void LinkedListvsArrayList_lesson() {
 
         LinkedList<Integer> linkedList = new LinkedList<Integer>();
         ArrayList<Integer> arrayList = new ArrayList<Integer>();
@@ -367,7 +368,7 @@ public class Main {
         long endTime;
         long elapsedTime;
 
-        for(int i = 0; i < 1000000; i++){
+        for (int i = 0; i < 1000000; i++) {
             linkedList.add(i);
             arrayList.add(i);
         }
@@ -411,7 +412,7 @@ public class Main {
 
     }
 
-    static void linearSearch_lesson(){
+    static void linearSearch_lesson() {
         // Linear Search: Iterate through a collection one element at a time
         /*
          * runtime complexity: O(n)
@@ -429,7 +430,7 @@ public class Main {
 
         int index = linearSearch(array, 1);
 
-        if(index != -1){
+        if (index != -1) {
             System.out.println("Element found at index: " + index);
         } else {
             System.out.println("Element not found");
@@ -437,10 +438,10 @@ public class Main {
     }
 
     // Intended to be used with lesson above (linear search)
-    private static int linearSearch(int[] array, int value){
+    private static int linearSearch(int[] array, int value) {
 
-        for(int i = 0; i < array.length; i++){
-            if(array[i] == value){
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == value) {
                 return i;
             }
         }
@@ -448,7 +449,7 @@ public class Main {
         return -1;
     }
 
-    static void binarySearch_lesson(){
+    static void binarySearch_lesson() {
         //binary search = Search algorithm that finds the position
         //                  a target value within a sorted array.
         //                  Half of the array is eliminated during each "step"
@@ -456,7 +457,7 @@ public class Main {
         int array[] = new int[1000000];
         int target = 777777;
 
-        for(int i = 0; i < array.length; i++){
+        for (int i = 0; i < array.length; i++) {
             array[i] = i;
         }
 
@@ -464,7 +465,7 @@ public class Main {
         //int index = Arrays.binarySearch(array, target);
         int index = binarySearch(array, target);
 
-        if(index == -1){
+        if (index == -1) {
             System.out.println(target + " not found");
         } else {
             System.out.println("Element found at: " + index);
@@ -477,29 +478,29 @@ public class Main {
         int low = 0;
         int high = array.length - 1;
 
-        while(low <= high){
-            int middle = low + (high - low)/2;
+        while (low <= high) {
+            int middle = low + (high - low) / 2;
             int value = array[middle];
 
             System.out.println("middle: " + value);
 
-            if(value < target) low = middle + 1;
+            if (value < target) low = middle + 1;
             else if (value > target) high = middle - 1;
             else return middle; // target found
         }
         return -1; // target not found
     }
 
-    static void interpolationSearch_lesson(){
+    static void interpolationSearch_lesson() {
         //interpolation search = improvement over binary search best used for
         //                          "uniformly" distributed "guesses" where
         //                          a value might be based on the calculated
         //                          probe results: if probe is incorrect,
         //                          search area is narrowed and a new probe is
         //                          calculated
-         /*         average case: O(log(log(n)))
-          *         worst case:   O(n) [values increase exponentially]
-          */
+        /*         average case: O(log(log(n)))
+         *         worst case:   O(n) [values increase exponentially]
+         */
 
         //int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9};
         int[] array = {1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024};
@@ -507,7 +508,7 @@ public class Main {
         // int index = interpolationSearch(array, 8);
         int index = interpolationSearch(array, 256);
 
-        if(index != -1){
+        if (index != -1) {
             System.out.println("Element found at index: " + index);
         } else {
             System.out.println("Element not found");
@@ -520,16 +521,16 @@ public class Main {
         int high = array.length - 1;
         int low = 0;
 
-        while(value >= array[low] && value <= array[high] && low <= high) {
+        while (value >= array[low] && value <= array[high] && low <= high) {
 
             int probe = low + (high - low) * (value - array[low]) /
-                        (array[high] - array[low]);
+                    (array[high] - array[low]);
 
             System.out.println("probe: " + probe);
 
-            if(array[probe] == value){
+            if (array[probe] == value) {
                 return probe;
-            } else if(array[probe] < value) {
+            } else if (array[probe] < value) {
                 low = probe + 1;
             } else {
                 high = probe - 1;
@@ -539,7 +540,7 @@ public class Main {
         return -1;
     }
 
-    static void bubbleSort_lession(){
+    static void bubbleSort_lession() {
         //bubble sort = pairs of adjacent elements are compared,
         //                  and the elements swapped if they are not in order
         //
@@ -551,27 +552,27 @@ public class Main {
 
         bubbleSort(array);
 
-        for (int i : array){
+        for (int i : array) {
             System.out.print(i);
         }
     }
 
     // Intended to be used with lesson above (bubble sort)
     private static void bubbleSort(int array[]) {
-        for(int i = 0; i < array.length - 1; i++){
-            for(int j = 0; j < array.length - 1; j++){
+        for (int i = 0; i < array.length - 1; i++) {
+            for (int j = 0; j < array.length - 1; j++) {
                 // To sort in descending order, switch 'Greater than' in condition below
                 //  to a 'less than'
-                if(array[j] > array[j + 1]){
+                if (array[j] > array[j + 1]) {
                     int temp = array[j];
-                    array[j] = array[j+1];
-                    array[j+1] = temp;
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
                 }
             }
         }
     }
 
-    static void selectionSort_lesson(){
+    static void selectionSort_lesson() {
         // selection sort = Search through an array and keep
         //                      track of the minimum value during
         //                      each iteration. At the end of each
@@ -585,19 +586,20 @@ public class Main {
 
         selectionSort(array);
 
-        for(int i : array){
+        for (int i : array) {
             System.out.print(i);
         }
     }
+
     // Intended to be used with lesson above (selection sort)
     private static void selectionSort(int[] array) {
 
-        for(int i = 0; i < array.length - 1; i++){
+        for (int i = 0; i < array.length - 1; i++) {
             int min = i;
-            for(int j = i + 1; j < array.length; j++){
+            for (int j = i + 1; j < array.length; j++) {
                 // To sort in descending order, switch 'Greater than' in condition below
                 //  to a 'less than'
-                if(array[min] > array[j]){
+                if (array[min] > array[j]) {
                     min = j;
                 }
             }
@@ -609,7 +611,7 @@ public class Main {
 
     }
 
-    static void insertionSort_lesson(){
+    static void insertionSort_lesson() {
         // insertion sort = after comparing elements to the left
         //                  shift elements to the right to make room to insert a value
         /*
@@ -624,8 +626,8 @@ public class Main {
         int array[] = {9, 1, 8, 2, 7, 3, 6, 5, 4};
 
         insertionSort(array);
-        
-        for(int i : array){
+
+        for (int i : array) {
             System.out.print(i + " ");
         }
     }
@@ -633,11 +635,11 @@ public class Main {
     // Intended to be used with lesson above (insertion sort)
     private static void insertionSort(int[] array) {
 
-        for(int i = 1; i < array.length; i++){
+        for (int i = 1; i < array.length; i++) {
             int temp = array[i];
             int j = i - 1;
 
-            while(j >= 0 && array[j] > temp){
+            while (j >= 0 && array[j] > temp) {
                 array[j + 1] = array[j];
                 j--;
             }
@@ -646,14 +648,14 @@ public class Main {
 
     }
 
-    static void recursion_lesson(){
+    static void recursion_lesson() {
         // recursion = When a thing is defined in terms of itself.
-         //     Apply the result of a procedure, to a procedure.
-         //
-         //     A recursive method calls itself. Can be a substitute
-         //     for iteration. Divide a problem into sub-problems
-         //     of the same type as the original. Commonly used with
-         //     advanced sorting algorithms and navigating trees.
+        //     Apply the result of a procedure, to a procedure.
+        //
+        //     A recursive method calls itself. Can be a substitute
+        //     for iteration. Divide a problem into sub-problems
+        //     of the same type as the original. Commonly used with
+        //     advanced sorting algorithms and navigating trees.
         /*
          *  Advantages
          * ____________
@@ -685,7 +687,7 @@ public class Main {
          */
 
         // Base case (when we would like to stop)
-        if(steps < 1) return;
+        if (steps < 1) return;
         System.out.println("You take a step!");
 
         // Recursive case (when we would like to continue)
@@ -705,13 +707,13 @@ public class Main {
     // Intended to be used with lesson above (recursion)
     private static int power(int base, int exponent) {
         // Base Case
-        if(exponent < 1) return 1;
+        if (exponent < 1) return 1;
 
         // Recursive Case
         return base * power(base, exponent - 1);
     }
 
-    static void mergeSort_lesson(){
+    static void mergeSort_lesson() {
         // merge sort = recursively divide array in 2, sort, re-combine
         // run-time complexity = O(n log n)
         // space complexity    = O(n)
@@ -719,7 +721,7 @@ public class Main {
 
         mergeSort(array);
 
-        for(int i = 0; i < array.length; i++){
+        for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + " ");
         }
     }
@@ -729,7 +731,7 @@ public class Main {
         int length = array.length;
 
         //Base Case
-        if(length <= 1) return;
+        if (length <= 1) return;
 
         //Recursion Case
         int middle = length / 2;
@@ -739,8 +741,8 @@ public class Main {
         int i = 0; //left array
         int j = 0; //right array
 
-        for(; i < length; i++){
-            if(i < middle){
+        for (; i < length; i++) {
+            if (i < middle) {
                 leftArray[i] = array[i];
             } else {
                 rightArray[j] = array[i];
@@ -754,35 +756,88 @@ public class Main {
     }
 
     // Intended to be used with lesson above (mergesort)
-    private static void merge(int[] leftArray, int[] rightArray, int[] array){
-        int leftSize = array.length/2;
+    private static void merge(int[] leftArray, int[] rightArray, int[] array) {
+        int leftSize = array.length / 2;
         int rightSize = array.length - leftSize;
         int i = 0, l = 0, r = 0;
 
         //check the conditions for merging
-        while(l < leftSize && r < rightSize){
-            if(leftArray[l] < rightArray[r]){
+        while (l < leftSize && r < rightSize) {
+            if (leftArray[l] < rightArray[r]) {
                 array[i] = leftArray[l];
                 i++;
                 l++;
-            }
-            else {
+            } else {
                 array[i] = rightArray[r];
                 i++;
                 r++;
             }
         }
-        while(l < leftSize){
+        while (l < leftSize) {
             array[i] = leftArray[l];
             i++;
             l++;
         }
-        while(r < rightSize){
+        while (r < rightSize) {
             array[i] = rightArray[r];
             i++;
             r++;
         }
     }
+
+    static void quickSort_lesson() {
+        //quick sort = moves smaller elements to left of a pivot
+        //              Recursively divides an array into 2 partitions
+        /*
+         * run-time complexity = Best case      O(n log(n))
+         *                       Average case   O(n log(n))
+         *                       Worst case     O(n^2) if already sorted
+         *
+         * space complexity    = O(log(n)) due to recursion
+         */
+
+        int[] array = {8, 2, 5, 3, 9, 4, 7, 6, 1};
+
+        quickSort(array, 0, array.length - 1);
+
+        for (int i : array) {
+            System.out.print(i + " ");
+        }
+    }
+
+    // Intended to be used with lesson above (quicksort)
+    private static void quickSort(int[] array, int start, int end) {
+        //Base Case
+        if (end <= start) return;
+
+        //Recusrion
+        int pivot = partition(array, start, end);
+        quickSort(array, start, pivot - 1);
+        quickSort(array, pivot + 1, end);
+    }
+
+    // Intended to be used with lesson above (quicksort)
+    private static int partition(int[] array, int start, int end) {
+
+        int pivot = array[end];
+        int i = start - 1;
+
+        for(int j = start; j <= end - 1; j++){
+           if(array[j] < pivot){
+               i++;
+               int temp = array[i];
+               array[i] = array[j];
+               array[j] = temp;
+           }
+        }
+        i++;
+        int temp = array[i];
+        array[i] = array[end];
+        array[end] = temp;
+
+        return i;
+    }
+
 }
 
 
