@@ -14,12 +14,13 @@ public class Main {
         //LinkedListvsArrayList_lesson();
         //hashTables_lesson();
         //adjacencyMatrix_lesson();
-        adjacencyList_lesson();
+        //adjacencyList_lesson();
 
         /*SEARCH*/
         //linearSearch_lesson();
         //binarySearch_lesson();
         //interpolationSearch_lesson();
+        depthFirstSearch_lesson();
 
         /*SORT*/
         //bubbleSort_lession();
@@ -957,6 +958,40 @@ public class Main {
         graph.addEdge(4, 2);
 
         graph.print();
+    }
+
+    static void depthFirstSearch_lesson(){
+        /*\
+         * Depth First Search = Pick a route, keep going.
+         *                      If you reach a dead end, or an already visited node,
+         *                      backtrack to a prvious node with unvisited
+         *                      adjacent neighbors.
+        \*/
+
+        Graph graph = new Graph(5);
+
+        graph.addNode(new Node('A'));
+        graph.addNode(new Node('B'));
+        graph.addNode(new Node('C'));
+        graph.addNode(new Node('D'));
+        graph.addNode(new Node('E'));
+
+        graph.addEdge(0, 1);
+        graph.addEdge(1, 2);
+        graph.addEdge(1, 4);
+        graph.addEdge(2, 3);
+        graph.addEdge(2, 4);
+        graph.addEdge(4, 0);
+        graph.addEdge(4, 2);
+
+        graph.print();
+
+        graph.depthFirstSearch(1);
+        System.out.println();
+        graph.depthFirstSearch(2);
+        System.out.println();
+        graph.depthFirstSearch(3);
+        System.out.println();
     }
 }
 
