@@ -33,6 +33,7 @@ public class Main {
 
         /* OTHER */
         //recursion_lesson();
+        calculateExecutionTime_lesson();
     }
 
     static void stack_lesson() {
@@ -1076,6 +1077,23 @@ public class Main {
         binarySearchTree.remove(9);
 
         binarySearchTree.display();
+    }
+
+    static void calculateExecutionTime_lesson(){
+        long start = System.nanoTime();
+
+        // PROGRAM
+
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        // END PROGRAM
+
+        long duration = (System.nanoTime() - start);
+        System.out.println(duration + "ms");
     }
 }
 
