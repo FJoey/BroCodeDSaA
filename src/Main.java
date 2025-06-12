@@ -21,7 +21,8 @@ public class Main {
         //binarySearch_lesson();
         //interpolationSearch_lesson();
         //depthFirstSearch_lesson();
-        breadthFirstSearch_lesson();
+        //breadthFirstSearch_lesson();
+        //binarySearchTree_lession();
 
         /*SORT*/
         //bubbleSort_lession();
@@ -961,6 +962,18 @@ public class Main {
         graph.print();
     }
 
+    /*\
+     * Breadth FS      = Traverse a graph level by level
+     *                   Utilizes a queue
+     *                   Better if destination is on average close to start
+     *                   Siblings are visited before children
+     *
+     * Depth FS        = Traverse a graph branch by branch
+     *                   Utilizes a Stack
+     *                   Better if destination is on average far from the start
+     *                   Children are visited before siblings
+     *                   More popular far games/puzzles
+    \*/
     static void depthFirstSearch_lesson(){
         /*\
          * Depth First Search = Pick a route, keep going.
@@ -994,18 +1007,6 @@ public class Main {
         graph.depthFirstSearch(3);
         System.out.println();
     }
-    /*\
-     * Breadth FS      = Traverse a graph level by level
-     *                   Utilizes a queue
-     *                   Better if destination is on average close to start
-     *                   Siblings are visited before children
-     *
-     * Depth FS        = Traverse a graph branch by branch
-     *                   Utilizes a Stack
-     *                   Better if destination is on average far from the start
-     *                   Children are visited before siblings
-     *                   More popular far games/puzzles
-    \*/
 
     static void breadthFirstSearch_lesson(){
         Graph graph = new Graph(5);
@@ -1035,7 +1036,72 @@ public class Main {
         graph.breadthFirstSearch(4);
         System.out.println();
     }
+
+    static void binarySearchTree_lession(){
+        /*\
+         * Binary Search Tree = A tree structure, where each node is greater
+         *                      than it's left child, but less that its right.
+         *
+         * Benefit            = easy to locate a node when they are in this order
+         *
+         * Time Complexity    = best case   O(log n)
+         *                      worst case  O(n)
+         *
+         * Space Complexity   =             O(n)
+         *
+        \*/
+
+        BinarySearchTree binarySearchTree = new BinarySearchTree();
+
+        binarySearchTree.insert(new Node3(5));
+        binarySearchTree.insert(new Node3(1));
+        binarySearchTree.insert(new Node3(9));
+        binarySearchTree.insert(new Node3(2));
+        binarySearchTree.insert(new Node3(7));
+        binarySearchTree.insert(new Node3(3));
+        binarySearchTree.insert(new Node3(6));
+        binarySearchTree.insert(new Node3(4));
+        binarySearchTree.insert(new Node3(8));
+
+        binarySearchTree.display();
+
+        System.out.println(binarySearchTree.search(0));
+        System.out.println(binarySearchTree.search(1));
+        System.out.println(binarySearchTree.search(9));
+        System.out.println(binarySearchTree.search(10));
+
+        binarySearchTree.remove(0);
+        binarySearchTree.remove(1);
+        binarySearchTree.remove(5);
+        binarySearchTree.remove(9);
+
+        binarySearchTree.display();
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
